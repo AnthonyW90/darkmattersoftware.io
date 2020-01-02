@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0; }
 
+#navbar {
+  position: sticky; }
+
 li, a, button {
   font-family: sans-serif;
   font-weight: 500;
@@ -28,6 +31,7 @@ header {
     display: inline-block;
     padding: 0px 20px; }
     .nav__links li a {
+      cursor: pointer;
       transition: all 0.3s ease 0s; }
     .nav__links li a:hover {
       color: #0088a9; }

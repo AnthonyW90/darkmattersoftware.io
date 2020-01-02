@@ -2,10 +2,18 @@
 {% block content %}
 
 {% include 'partials/_navbar.html' %}
-{% include 'partials/_hero.html' %}
-{% include 'partials/_about.html' %}
-{% include 'partials/_services.html' %}
-{% include 'partials/_work.html' %}
+<div id="home">
+    {% include 'partials/_hero.html' %}
+</div>
+<div id="about">
+    {% include 'partials/_about.html' %}
+</div>
+<div id="services">
+    {% include 'partials/_services.html' %}
+</div>
+<div id="work">
+    {% include 'partials/_work.html' %}
+</div>
 {% include 'partials/_pdxcode.html' %}
 {% include 'partials/_contact.html' %}
 

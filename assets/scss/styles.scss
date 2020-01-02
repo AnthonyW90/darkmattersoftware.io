@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+#navbar {
+    position: sticky;
+}
 
 li, a, button {
     font-family: sans-serif;
@@ -34,6 +37,7 @@ header {
         padding: 0px 20px;
 
         a{
+            cursor: pointer;
             transition: all 0.3s ease 0s;
         }
         a:hover{
