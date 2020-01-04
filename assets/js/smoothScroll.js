@@ -1,10 +1,13 @@
 smoothScroll = (selector, duration) => {
-    const startPos = window.pageYOffset
-    const target = document.querySelector(selector)
-    const targetPos = target.getBoundingClientRect().top
-    const dist = targetPos - startPos
+    let startPos = window.pageYOffset
+    let target = document.querySelector(selector)
+    let targetPos = target.getBoundingClientRect().top
+    let dist = Math.abs(targetPos) - Math.abs(startPos)
     let startTime = null
-
+    console.log(target)
+    console.log(`targetPos = ${targetPos}`)
+    console.log(`startPos = ${startPos}`)
+    console.log(`dist = ${dist}`)
 
     animation = (currentTime) => {
         if (startTime === null) startTime = currentTime
