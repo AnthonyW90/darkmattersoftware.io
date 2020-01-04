@@ -30,7 +30,7 @@ const about = document.querySelector('#a-about')
 const services = document.querySelector('#a-services')
 const work = document.querySelector('#a-work')
 
-home.addEventListener('click', () => smoothScroll('#home', 1000))
+home.addEventListener('click', () => smoothScroll('#hero', 1000))
 about.addEventListener('click', () => smoothScroll('#about', 1000))
 services.addEventListener('click', () => smoothScroll('#services', 1000))
 work.addEventListener('click', () => smoothScroll('#work', 1000))

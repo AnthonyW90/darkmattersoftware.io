@@ -1,20 +1,85 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-{% include 'partials/_navbar.html' %}
-<div id="home">
-    {% include 'partials/_hero.html' %}
+<div>
+    <div id="navbar">
+        <header>
+            <img class="logo" id="a-home" src="{% static 'images/dms-no-bg.svg'%}" alt="DMS Logo">
+            <nav>
+                <ul class="nav__links">
+                    <li><a id="a-about">About</a></li>
+                    <li><a id="a-services">Services</a></li>
+                    <li><a id="a-work">Work</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta"><button>Contact</button></a>
+        </header>
+    </div>
+    <div id="hero">
+        <div id="h-left">
+            <h2>Transforming your vision to reality</h2>
+            <div id="h-buttons">
+                <button>Contact</button>
+                <button>Services</button>
+            </div>
+        </div>
+        <div id="h-right">
+            <img src="{% static 'images/dms-no-bg.svg' %}" height="600" width="600" alt="DMS Logo">
+        </div>
+    </div>
+    <div id="about">
+        <div class="about">
+            <h2>Project Management</h2>
+            <p>Dark Matter Software provides project management for the lifecycle of your project. You have a dream, and we'll see it through from development to deployment.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="about">
+            <h2>Development</h2>
+            <p>We use modern and scalable technologies to build the best product to suit your current and future business needs.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="about">
+            <h2>Deployment</h2>
+            <p>Dark Matter doesn't just build software, we support you in ensuring it works long-term.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+    <div id="services">
+        <div class="services">
+            <h3>End-to-End Expertise</h3>
+            <p>Our teams write code that turns your ideas into tangible results.</p>
+        </div>
+        <div class="services">
+            <h3>Security Always</h3>
+            <p>Our products are stable and secure for your peace of mind.</p>
+        </div>
+        <div class="services">
+            <h3>Products that work</h3>
+            <p>Results that integrate with business systems, improve efficiency, and scale for future needs.</p>
+        </div>
+        <div class="services">
+            <h3>User Experience</h3>
+            <p>Our software delivers exceptional user experiences that help your business grow.</p>
+        </div>
+        <div class="services">
+            <h3>Seamless Integration</h3>
+            <p>Providing solutions that integrate with the workflows and technologies you need.</p>
+        </div>
+        <div class="services">
+            <h3>Your Digital Investment</h3>
+            <p>When you choose Dark Matter Software, your investment goes farther and lasts longer.</p>
+        </div>
+    </div>
+    <div id="work">
+
+    </div>
+    <div id="pdx">
+
+    </div>
+    <div id="contact">
+
+    </div>
 </div>
-<div id="about">
-    {% include 'partials/_about.html' %}
-</div>
-<div id="services">
-    {% include 'partials/_services.html' %}
-</div>
-<div id="work">
-    {% include 'partials/_work.html' %}
-</div>
-{% include 'partials/_pdxcode.html' %}
-{% include 'partials/_contact.html' %}
 
 {% endblock %}

@@ -3,9 +3,6 @@
     margin: 0;
     padding: 0;
 }
-#navbar {
-    position: sticky;
-}
 
 li, a, button {
     font-family: sans-serif;
@@ -16,11 +13,19 @@ li, a, button {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 0px 10%;
     background-color: #24252A;
+}
+#navbar {
+    height: 100px;
 }
 
 .logo {
@@ -60,12 +65,4 @@ button:hover {
     background-color: rgba(0, 136, 169, 0);
     border: 1px solid rgba(0, 136, 169, 1);
     padding: 9px 24px;
-}
-
-div.hero {
-    height: calc(100vh - 100px);
-}
-
-div.containter {
-    height: 100vh;
 }

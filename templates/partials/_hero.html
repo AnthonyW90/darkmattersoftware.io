@@ -1,5 +1,14 @@
-<div class='hero'>
-    <div>
-        <h1>HERO</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/hero.css' %}">
+<div class='container' id="hero">
+    <div id="h-left">
+        <h2>Transforming your vision to reality</h2>
+        <div id="h-buttons">
+            <button>Contact</button>
+            <button>Services</button>
+        </div>
+    </div>
+    <div id="h-right">
+        <img src="{% static 'images/dms-no-bg.svg' %}" height="600" width="600" alt="DMS Logo">
     </div>
 </div>
