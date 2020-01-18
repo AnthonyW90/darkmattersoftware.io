@@ -4,6 +4,9 @@
   padding: 0;
   font-family: sans-serif; }
 
+body {
+  background: radial-gradient(circle at 24% 23%, rgba(167, 167, 167, 0.06) 0%, rgba(167, 167, 167, 0.06) 25%, rgba(148, 148, 148, 0.06) 25%, rgba(148, 148, 148, 0.06) 50%, rgba(129, 129, 129, 0.06) 50%, rgba(129, 129, 129, 0.06) 75%, rgba(110, 110, 110, 0.06) 75%, rgba(110, 110, 110, 0.06) 100%), radial-gradient(circle at 58% 30%, rgba(14, 14, 14, 0.06) 0%, rgba(14, 14, 14, 0.06) 25%, rgba(60, 60, 60, 0.06) 25%, rgba(60, 60, 60, 0.06) 50%, rgba(107, 107, 107, 0.06) 50%, rgba(107, 107, 107, 0.06) 75%, rgba(153, 153, 153, 0.06) 75%, rgba(153, 153, 153, 0.06) 100%), radial-gradient(circle at 79% 53%, rgba(225, 225, 225, 0.06) 0%, rgba(225, 225, 225, 0.06) 25%, rgba(189, 189, 189, 0.06) 25%, rgba(189, 189, 189, 0.06) 50%, rgba(152, 152, 152, 0.06) 50%, rgba(152, 152, 152, 0.06) 75%, rgba(116, 116, 116, 0.06) 75%, rgba(116, 116, 116, 0.06) 100%), linear-gradient(221deg, black, black); }
+
 li, a, button {
   font-family: sans-serif;
   font-weight: 500;
@@ -45,47 +48,104 @@ header {
 button {
   padding: 9px 25px;
   margin-left: 20px;
-  background: #0088a9;
-  border: none;
+  background: #009add;
+  border: 1px solid #009add;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s; }
 
 button:hover {
-  background-color: rgba(0, 136, 169, 0);
-  border: 1px solid #0088a9;
+  background-color: rgba(0, 154, 221, 0);
   padding: 9px 24px; }
 
 #hero {
   height: calc(100vh - 100px);
-  background: radial-gradient(circle at 30% 94%, rgba(245, 245, 245, 0.06) 0%, rgba(245, 245, 245, 0.06) 50%, rgba(21, 21, 21, 0.06) 50%, rgba(21, 21, 21, 0.06) 100%), radial-gradient(circle at 59% 19%, rgba(248, 248, 248, 0.06) 0%, rgba(248, 248, 248, 0.06) 50%, rgba(87, 87, 87, 0.06) 50%, rgba(87, 87, 87, 0.06) 100%), radial-gradient(circle at 7% 11%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(254, 254, 254, 0.06) 50%, rgba(254, 254, 254, 0.06) 100%), linear-gradient(90deg, #bdbdbd, #cdcdcd);
   display: flex;
   justify-content: space-evenly;
   align-items: center; }
   #hero #h-left {
     padding-top: 8rem; }
+    #hero #h-left h2 {
+      color: white; }
     #hero #h-left #h-buttons {
       margin: 2rem; }
 
 #about {
   height: calc(100vh - 100px);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 0.85) 30%, white 45%, white 55%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.5) 85%, rgba(255, 255, 255, 0) 100%);
   padding: 4rem;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
   align-items: center; }
   #about .about {
-    padding: 2rem; }
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #about .about p {
+      margin: 2rem; }
+    #about .about button {
+      margin: 0; }
 
 #services {
   height: calc(100vh - 100px);
   padding: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  background-color: #009ADD; }
+  grid-template-rows: 1fr 1fr; }
   #services .services {
     background-color: #fff;
     box-shadow: 4px 4px 19px 5px rgba(94, 94, 94, 0.37);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     border-radius: 8px;
     padding: 1rem;
     margin: .5rem; }
+    #services .services h3 {
+      font-size: 32px; }
+    #services .services p {
+      font-size: 24px; }
+
+#pdx {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 0.85) 30%, white 45%, white 55%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.5) 85%, rgba(255, 255, 255, 0) 100%);
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center; }
+  #pdx .pdx-left {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #pdx .pdx-left img {
+      width: 60%;
+      margin: 0 auto;
+      padding: 2rem; }
+  #pdx .pdx-right {
+    position: relative;
+    background: linear-gradient(to right, #ffd494 0%, #ff9900 100%);
+    border: 4px solid white;
+    padding: 2em 1em;
+    margin: 1em 4em;
+    border-radius: 24px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #pdx .pdx-right a {
+      font-size: 32px;
+      text-decoration: none;
+      color: black; }
+    #pdx .pdx-right h3 {
+      font-size: 32px;
+      color: black; }
+    #pdx .pdx-right p {
+      padding: 2rem;
+      font-size: 24px;
+      text-align: center; }

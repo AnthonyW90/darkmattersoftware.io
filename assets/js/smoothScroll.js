@@ -1,3 +1,4 @@
+
 smoothScroll = (selector, duration) => {
     const startPos = window.pageYOffset
     const target = document.querySelector(selector)
