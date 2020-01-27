@@ -1,190 +1,26 @@
-/*
-	Hyperspace by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
+let info = document.querySelector(".info")
+let btnManagement = document.querySelector(".btn-management")
+let btnDevelopment = document.querySelector(".btn-development")
+let btnDeployment = document.querySelector(".btn-deployment")
 
-(function($) {
+const management = "Our teams have skilled Project Managers to oversee the entire project life cycle, so you don’t have to. We work together to hit deadlines and meet goals until your vision is complete."
+const development = "We use battle-tested technologies to create software that solves your problems, meets your needs, and lasts for long-term use."
+const deployment = "When it comes to deploying your new software, we stand by our projects with support through transitions and use. With effective project management, we streamline workflows and coordinate with your goals from start to finish."
 
-	var	$window = $(window),
-		$body = $('body'),
-		$sidebar = $('#sidebar');
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+const handleClick = (e, message) => {
+    if(!drawer.style.transform){
+        drawer.style.transform = "scaleY(1)"
+        info.innerText = message
+    }
+    else if(drawer.style.transform == "scaleY(1)"){
+        drawer.style.transform = "scaleY(0)"
+    } else{
+        drawer.style.transform = "scaleY(1)"
+    }
+}
 
-	// Hack: Enable IE flexbox workarounds.
-		if (browser.name == 'ie')
-			$body.addClass('is-ie');
+btnManagement.addEventListener('click', (management) => handleClick(management))
+btnDevelopment.addEventListener('click', (development) => handleClick(development))
+btnDeployment.addEventListener('click', (deployment) => handleClick(deployment))
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// Forms.
-
-		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
-
-				// Stop propagation, default.
-					event.stopPropagation();
-					event.preventDefault();
-
-				// Submit form.
-					$(this).parents('form').submit();
-
-			});
-
-	// Sidebar.
-		if ($sidebar.length > 0) {
-
-			var $sidebar_a = $sidebar.find('a');
-
-			$sidebar_a
-				.addClass('scrolly')
-				.on('click', function() {
-
-					var $this = $(this);
-
-					// External link? Bail.
-						if ($this.attr('href').charAt(0) != '#')
-							return;
-
-					// Deactivate all links.
-						$sidebar_a.removeClass('active');
-
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
-							.addClass('active')
-							.addClass('active-locked');
-
-				})
-				.each(function() {
-
-					var	$this = $(this),
-						id = $this.attr('href'),
-						$section = $(id);
-
-					// No section for this link? Bail.
-						if ($section.length < 1)
-							return;
-
-					// Scrollex.
-						$section.scrollex({
-							mode: 'middle',
-							top: '-20vh',
-							bottom: '-20vh',
-							initialize: function() {
-
-								// Deactivate section.
-									$section.addClass('inactive');
-
-							},
-							enter: function() {
-
-								// Activate section.
-									$section.removeClass('inactive');
-
-								// No locked links? Deactivate all links and activate this section's one.
-									if ($sidebar_a.filter('.active-locked').length == 0) {
-
-										$sidebar_a.removeClass('active');
-										$this.addClass('active');
-
-									}
-
-								// Otherwise, if this section's link is the one that's locked, unlock it.
-									else if ($this.hasClass('active-locked'))
-										$this.removeClass('active-locked');
-
-							}
-						});
-
-				});
-
-		}
-
-	// Scrolly.
-		$('.scrolly').scrolly({
-			speed: 1000,
-			offset: function() {
-
-				// If <=large, >small, and sidebar is present, use its height as the offset.
-					if (breakpoints.active('<=large')
-					&&	!breakpoints.active('<=small')
-					&&	$sidebar.length > 0)
-						return $sidebar.height();
-
-				return 0;
-
-			}
-		});
-
-	// Spotlights.
-		$('.spotlights > section')
-			.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			})
-			.each(function() {
-
-				var	$this = $(this),
-					$image = $this.find('.image'),
-					$img = $image.find('img'),
-					x;
-
-				// Assign image.
-					$image.css('background-image', 'url(' + $img.attr('src') + ')');
-
-				// Set background position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
-
-				// Hide <img>.
-					$img.hide();
-
-			});
-
-	// Features.
-		$('.features')
-			.scrollex({
-				mode: 'middle',
-				top: '-20vh',
-				bottom: '-20vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			});
-
-})(jQuery);
